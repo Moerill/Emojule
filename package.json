@@ -1,0 +1,9 @@
+{
+  "name": "emoji",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "twemoji": "^13.0.1"
+  }
+}
