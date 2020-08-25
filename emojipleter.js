@@ -8,7 +8,7 @@ const emojiList = Object.entries(emojiData)
                           return {
                             code: ':' + name + ':',
                             img: $(twemoji.parse(unicode, {
-                              base: 'modules/emoji/',
+                              base: 'modules/emojule/',
                               folder: 'assets',
                               ext: '.svg'
                             }))[0]

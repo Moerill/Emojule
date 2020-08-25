@@ -8,7 +8,7 @@ import EmojiPleter from './emojipleter.js';
 (() => {
   window.twemoji = twemoji;
 
-  twemoji.base = 'modules/emoji/';
+  twemoji.base = 'modules/emojule/';
   twemoji.ext = '.svg'
   const regExp = RegExp(Object.keys(emojiData)
                           .map((name) => ':' + name + ':')
@@ -22,12 +22,14 @@ import EmojiPleter from './emojipleter.js';
 
     return ret.replace(regExp, function(match, offset, src) {
       return twemoji.parse(emojiData[match.slice(1, -1)], {
-        base: 'modules/emoji/',
+        base: 'modules/emojule/',
         folder: 'assets',
         ext: '.svg'
       });
     });
   };
+
+  console.log(emojiData)
 })();
 
 Hooks.on('renderChatLog', (app, html, options) => {

@@ -2,7 +2,7 @@
 	"name": "emojule",
 	"title": "Emojule - The Emoji Module",
 	"description": "Adds emoji/emoticon/smiley support to chat and most editor based textareas, using Twemojis. To get suggestions just start by writing a ':' in chat and suggestions should appear! The emojis are encoded similar to most modern apps, like Discord, using ':keyword:', e.g. ':smile:'.",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"minimumCoreVersion": "0.6.6",
   "compatibleCoreVersion": "0.6.6",
   "type": "module",
@@ -11,5 +11,5 @@
   "styles": ["emoji.css"],
 	"manifest": "https://raw.githubusercontent.com/Moerill/emojule/master/module.json",
 	"url": "https://github.com/Moerill/emojule",
-	"download": "https://github.com/Moerill/emojule/releases/download/v0.1.2/v0.1.2.zip"
+	"download": "https://github.com/Moerill/emojule/releases/download/v0.1.3/v0.1.3.zip"
 }
