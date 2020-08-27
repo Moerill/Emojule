@@ -5,5 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "twemoji": "^13.0.1"
+  },
+  "devDependencies": {
+    "foundry-pc-types": "gitlab:foundry-projects/foundry-pc/foundry-pc-types"
   }
 }

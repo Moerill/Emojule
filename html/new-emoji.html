@@ -1,0 +1,16 @@
+
+<li class='emojule-custom-emoji'>
+  <a class='emojule-select-image' title="Select emoji image.">
+    {{#if icon}}
+      <img class='emoji' src='{{icon}}' path='{{icon}}'/>
+    {{else}}
+      <i class="far fa-image"></i>
+    {{/if}}
+  </a>
+  {{#if code}}
+    <div contenteditable="true" class='emojule-code'>{{code}}</div>
+  {{else}}
+    <div contenteditable="true" class='emojule-code emojule-placeholder'>custom_emoji_code_here</div>
+  {{/if}}
+  <a class='emojule-remove-emoji'><i class="fas fa-minus"></i></a>
+</li>

@@ -1,12 +1,15 @@
 # Emojule - The Emoji Module
-<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/moerill/emojule?style=flat-square"> [<img alt="GitHub" src="https://img.shields.io/github/license/moerill/emojule?style=flat-square">](https://img.shields.io/github/downloads/moerill/emojule/latest/total?style=flat-square)   [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FYZ294SP2JBGS&source=url)
+[<img alt="GitHub" src="https://img.shields.io/github/downloads/moerill/emojule/latest/total">](https://img.shields.io/github/downloads/moerill/emojule/latest/total) [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FYZ294SP2JBGS&source=url)
 
 This module adds Emoji/Emoticon/Smiley support to chat and most text based editors in FVTT. It also provides suggestions for emojis in chat. Just start your emoji using ``:`` and suggestions will appear! (Suggestions is only available for chat.)  
-The emojis are encoded similar to most modern apps, like Discord, using ':keyword:', e.g. ':smile:'.
+The emojis are encoded similar to most modern apps, like Discord, using ':keyword:', e.g. ':smile:'.  
+Use the settings menu to add your own custom emojis!
 
 ## Atribution
 Powered by ![Twemoji - Twitter Emoji](https://github.com/twitter/twemoji).
 Their code is licensed under ![MIT](https://github.com/twitter/twemoji/blob/master/LICENSE) and the graphics under ![CC-BY 4.0](https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS).
+
+Data mapping parsed from ![Emoji Data](https://github.com/iamcal/emoji-data), licensed under the [MIT License](https://github.com/iamcal/emoji-data/blob/master/LICENSE).
 
 ## Licensing
 <img alt="GitHub" src="https://img.shields.io/github/license/moerill/emojule?style=flat">

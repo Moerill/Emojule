@@ -1,0 +1,29 @@
+<form class="{{classes}}" autocomplete="off">
+  <nav class="sheet-tabs tabs" data-group="sections">
+    <a class='item' data-tab='emojis'>Custom Emojis</a>
+    <a class='item' data-tab='Info'>Info</a>
+  </nav>
+  <section class='content'>
+    <div class='tab' data-tab='emojis' data-group='sections'>
+      <ul class='emojule-custom-emoji-list'>
+        {{#each customEmojis as |icon code|}}
+          {{> modules/emojule/html/new-emoji.html icon=icon code=code}}
+        {{/each}}
+        <li class='emojule-add-new-custom-emoji'><a>Add new emoji <i class="fas fa-plus"></i></a></li>
+      </ul>
+    </div>
+    <div class='tab' data-tab='Info' data-group='sections'>
+      <h2>General</h2>
+      <ul>
+        <li><a href="https://github.com/Moerill/Emojule/issues">Bugs or feature suggestion? Create an issue here.</a></li>
+        <li><a href="https://github.com/Moerill/Emojule/blob/master/CHANGELOG.md">Changelog</a></li>
+        <li><a href="https://github.com/Moerill/emojule">More Info</a></li>
+      </ul>
+
+      <p style="font-weight: bold; text-align: right;">Best regards, <br>Moerill</p>
+      <h2 style="margin:0;"></h2>
+      <p style="display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start;"><input type="checkbox" class='show-again' id="welcome-screen-show-again" checked/> <label for="welcome-screen-show-again">Don't show this screen again until next update.</label></p>
+      <p style="text-align: right">Want to support development? <a href="https://github.com/Moerill/markdown-editor#support-the-development">Click here</a></p>
+    </div>
+  </section>
+</form>

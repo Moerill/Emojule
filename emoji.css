@@ -45,3 +45,68 @@ img.emoji {
   width: 1.5em;
   height: 1.5em;
 }
+
+.emojule-custom-emoji-list {
+  list-style: none;
+  background: rgba(0,0,0,0.05);
+  padding: 0.5em 0;
+  border-radius: 0.5em;
+  border: 2px inset #6663;
+  margin: 0;
+}
+
+.emojule-code:before, .emojule-code:after{
+  content: ":"
+}
+
+.emojule-code {
+  width: 100%;
+  min-width: 10ch;
+  margin-right: 1em;
+  padding: 0 0.5ch;
+}
+
+.emojule-code:hover { 
+  outline: 1px solid #ddd;
+}
+
+.emojule-code:focus {
+  outline: 1px solid #333;
+}
+
+.emojule-placeholder {
+  opacity: 0.6;
+}
+
+.emojule-custom-emoji {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  /* height: 1.8em; */
+  padding: 0.5em 0.5em;
+}
+
+.emojule-custom-emoji:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.emojule-select-image {
+  padding-right: 1em;
+}
+
+.emojule-add-new-custom-emoji {
+  border-top: 1px dashed #666;
+  margin: 0 0.5em;
+  text-align: right;
+  padding-top: 0.2em;
+}
+
+.emojule nav {
+
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  margin: 0 0 6px 0;
+
+  background: rgba(0, 0, 0, 0.05);
+  padding: 6px;
+}

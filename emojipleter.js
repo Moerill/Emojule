@@ -1,20 +1,3 @@
-import { emojiData } from './data/emoji.js';
-import twemoji from './data/twemoji.esm.js';
-
-const emojiList = Object.entries(emojiData)
-                        .sort((a,b) => a[0] > b[0])
-                        .map(e => {
-                          const [name, unicode] = e;
-                          return {
-                            code: ':' + name + ':',
-                            img: $(twemoji.parse(unicode, {
-                              base: 'modules/emojule/',
-                              folder: 'assets',
-                              ext: '.svg'
-                            }))[0]
-                          };
-                        });
-
 export default class EmojiPleter {
   constructor(element) {
     this.element = element;
@@ -22,14 +5,15 @@ export default class EmojiPleter {
     // we need to add it to the parent, since base fvtt does use "onCapture =  true" on the text area, which results in listeners being called in order of definition.... so preventing the "Enter" won't be possible that way
     this.element.parentNode.addEventListener('keydown', (ev) => {
       const code = game.keyboard.getKey(event);
-      if (code === 'Enter') {
+      if (code === 'Enter' && this._visible) {
         const word = this._getWord();
         if (/^:\w*$/.exec(word)) {
           ev.stopPropagation();
           ev.preventDefault();
           this.select(this._selected.querySelector('span').innerText);
-          
         }
+        this.close();
+      } else if (code === "Escape") {
         this.close();
       }
     }, true);
@@ -75,7 +59,8 @@ export default class EmojiPleter {
   }
 
   _filter(str) {
-    return emojiList.filter(e => e.code.includes(str));
+    const str2 = str.substring(1);
+    return [...CONFIG.emojule.list.filter(e => e.code.includes(str)), ...CONFIG.emojule.list.filter(e => e.code.includes(str2, 2))];
   }
 
   _getWord() {
@@ -106,8 +91,10 @@ export default class EmojiPleter {
     for (let e of list) {
       const li = ul.appendChild(document.createElement('li'));
       li.classList.add('emojipleter-emoji');
-      // li.innerHTML = `${e.img}<span>${e.code}</span>`
-      li.appendChild(e.img);
+      const img = li.appendChild(document.createElement('img'))
+      img.src = e.url;
+      img.classList.add('emoji');
+      img.draggable = false;
       li.appendChild(document.createElement('span')).innerText = e.code;
     }
     return ul;
