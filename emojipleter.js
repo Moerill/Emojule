@@ -1,23 +1,30 @@
 export default class EmojiPleter {
   constructor(element) {
     this.element = element;
-    this.element.addEventListener('keyup', this.onKeyUp);
+    this.activateListeners(element);
+  }
+
+  activateListeners(element) {
+    this.element.parentNode.addEventListener('keyup', this.onKeyUp, true);
     // we need to add it to the parent, since base fvtt does use "onCapture =  true" on the text area, which results in listeners being called in order of definition.... so preventing the "Enter" won't be possible that way
-    this.element.parentNode.addEventListener('keydown', (ev) => {
-      const code = game.keyboard.getKey(event);
-      if (code === 'Enter' && this._visible) {
-        const word = this._getWord();
-        if (/^:\w*$/.exec(word)) {
-          ev.stopPropagation();
-          ev.preventDefault();
-          this.select(this._selected.querySelector('span').innerText);
-        }
-        this.close();
-      } else if (code === "Escape") {
-        this.close();
-      }
-    }, true);
+    this.element.parentNode.addEventListener('keydown', (ev) => this._onKeyDown(ev), true);
     this.element.addEventListener('submit', ev => console.log(ev));
+  }
+
+  _onKeyDown(ev) {
+    const code = game.keyboard.getKey(event);
+    if (code === 'Enter' && this._visible) {
+      const word = this._getWord();
+      if (/^:\w*$/.exec(word)) {
+        ev.stopPropagation();
+        ev.preventDefault();
+        this.select(this._selected.querySelector('span').innerText);
+      }
+      this.close();
+    } else if (code === "Escape") {
+      this.close();
+    }
+
   }
 
   onKeyUp = (ev) => this._onKeyUp(ev);
@@ -100,9 +107,17 @@ export default class EmojiPleter {
     return ul;
   }
 
+  get spawnCSS() {
+    const rect = this.element.parentNode.getBoundingClientRect();
+    return {
+      width: rect.width + 'px',
+      bottom: window.innerHeight - rect.top + 'px',
+      left: rect.left + 'px'
+    }
+  }
+
   show(list) {
     if (this.html) return;
-    const rect = this.element.getBoundingClientRect();
     const div = document.createElement('div');
     div.id = 'emojipleter';
     div.appendChild(list);
@@ -110,8 +125,10 @@ export default class EmojiPleter {
     
     div.scrollTop = div.scrollHeight;
     this.html = div;
-    this.html.style.bottom = window.innerHeight - rect.top + 'px';
-    this.html.style.left = rect.left + 'px';
+    const css = this.spawnCSS;
+    for (let key in css) {
+      this.html.style[key] = css[key];
+    }
 
     div.addEventListener('click', ev => {
       const target = ev.target.closest('.emojipleter-emoji');
@@ -139,6 +156,8 @@ export default class EmojiPleter {
   }
 
   select(str) {
+    if (false === Hooks.call('emojuleSelectEmoji', str, this.element)) return;
+
     const orig = this.element.value;
     const start = this.element.selectionStart;
     const preText = this.element.value.substring(0, start);

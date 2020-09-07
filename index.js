@@ -62,10 +62,35 @@ Hooks.on('ready', async () => {
   const oldFun = TextEditor.enrichHTML;
   TextEditor.enrichHTML = function (content, args) {
     let ret = oldFun.call(this, content, args);
-    return ret.replace(/:\w+:/g, function(match, offset, src) {
+    ret = ret.replace(/:\w+:/g, function(match, offset, src) {
       const data = CONFIG.emojule.list.find(e => e.code === match);
-      return `<img class="emoji" draggable="false" src="${data?.url}" title="${data?.code}"/>`;
+      return `<img class="emoji" draggable="false" src="${data?.url}" title="${data?.code.slice(1, -1)}"/>`;
     });
+
+    // Check whether the messages content only consists of emojis
+    const div = document.createElement('div');
+    div.innerHTML = ret;
+    const emojis = Array.from(div.querySelectorAll('.emoji'));
+    if (!emojis.length) return ret;
+
+    let parent = div;
+    // allow for emojis to be nested one container below the original message content
+    if (div.children.length === 1 && div.children[0].tagName !== 'IMG')
+      parent = div.children[0];
+
+    for (let child of parent.childNodes) {
+      if (child.classList?.contains('emoji')) continue;
+
+      // check whether there are only spaces in possible sibling text nodes
+      if (child.tagName || !/^\s*$/.exec(child.textContent))
+        return ret;
+    }
+
+    for (let emoji of emojis) 
+      emoji.classList.add('emoji-large');
+
+    ret = div.innerHTML;
+    return ret;
   };
 });
 
@@ -74,18 +99,3 @@ Hooks.on('renderChatLog', (app, html, options) => {
   EmojiPleter.bind(textarea[0]);
   // html.find('#chat-log')[0].addEventListener('mouseenter', emojiZoom, true)
 });
-
-
-// Hooks.on('ready', () => {
-//   new Emotings().render(true);
-// });
-
-async function emojiZoom(ev) {
-  const emoji = ev.target.closest('.emoji')
-  if (!emoji) return;
-  console.log(emoji)
-}
-
-
-Hooks.on('ready', () => {
-})

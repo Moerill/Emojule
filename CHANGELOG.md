@@ -1,3 +1,13 @@
+# v0.3
+
+- *NEW* Emojis are now scaled when only emojis were sent (similar do e.g. discord or telegram)
+- made emojipleter more easily extendable for other modules to use (e.g. Meme)
+- *NEW* Hook ``emojuleSelectEmoji`` with the selected emoji code as parameter.
+  - parameters: emojicode, element
+  - Allows to react to selected emoji insertion
+  - ``return false`` to stop insertion
+- removed one emoji that is not available in the twemoji image pack
+
 # v0.2.0
 
 - *NEW* Custom emoji support!

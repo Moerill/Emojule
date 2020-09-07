@@ -1,12 +1,17 @@
 {
-  "name": "emoji",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "twemoji": "^13.0.1"
-  },
-  "devDependencies": {
-    "foundry-pc-types": "gitlab:foundry-projects/foundry-pc/foundry-pc-types"
-  }
+	"name": "emoji",
+	"version": "0.3.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"twemoji": "^13.0.1"
+	},
+	"devDependencies": {
+		"chalk": "^4.1.0",
+		"foundry-pc-types": "gitlab:foundry-projects/foundry-pc/foundry-pc-types",
+		"gulp": "^4.0.2",
+		"gulp-git": "^2.10.1",
+		"json-stringify-pretty-compact": "^2.0.0",
+		"yargs": "^15.4.1"
+	}
 }

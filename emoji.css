@@ -6,6 +6,11 @@ img.emoji {
   border: none;
 }
 
+img.emoji-large {
+  height: 4em;
+  width: 4em;
+}
+
 #emojipleter {
   position: absolute;
   z-index: 100;
