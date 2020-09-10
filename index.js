@@ -45,7 +45,8 @@ Hooks.on('init', () => {
     default: {},
     type: Object,
     config: false,
-    onChange: createEmojiList
+    onChange: createEmojiList,
+    scope: "world"
   });
 
   game.settings.registerMenu('emojule', 'emojiSettings', {

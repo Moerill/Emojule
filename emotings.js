@@ -137,6 +137,7 @@ export default class Emotings extends FormApplication {
       const code = row.querySelector('.emojule-code:not(.emojule-placeholder)');
       return [code?.innerText, img?.dataset.path];
     }).filter(row => row[0] && row[1]));
+
     game.settings.set('emojule', 'emojis', obj)
   }
 

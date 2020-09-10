@@ -1,3 +1,8 @@
+# v0.3.2
+
+- *FIX* custom emojis not being defined for all users
+- *FIX* Custom Emoji Settings... now for real
+
 # v0.3.1
 
 - *FIX* custom emoji settings sometimes disappearing after reopening and closing the settings window.
