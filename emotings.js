@@ -139,4 +139,6 @@ export default class Emotings extends FormApplication {
     }).filter(row => row[0] && row[1]));
     game.settings.set('emojule', 'emojis', obj)
   }
+
+  _onSubmit() {} // we don't wnat to submit, cause we update after each change.
 }

@@ -1,3 +1,7 @@
+# v0.3.1
+
+- *FIX* custom emoji settings sometimes disappearing after reopening and closing the settings window.
+
 # v0.3
 
 - *NEW* Emojis are now scaled when only emojis were sent (similar do e.g. discord or telegram)
