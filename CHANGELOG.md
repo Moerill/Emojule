@@ -1,3 +1,7 @@
+# v0.3.3
+
+- *FIX* incompatibility with MEME
+
 # v0.3.2
 
 - *FIX* custom emojis not being defined for all users

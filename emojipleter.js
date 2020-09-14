@@ -23,6 +23,9 @@ export default class EmojiPleter {
       this.close();
     } else if (code === "Escape") {
       this.close();
+    } else if (code === 'ArrowDown' || code === 'ArrowUp') {
+      // prevent up/down e.g. for codemirror
+      ev.preventDefault(); ev.stopPropagation();
     }
 
   }
