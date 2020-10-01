@@ -11,6 +11,12 @@ Their code is licensed under ![MIT](https://github.com/twitter/twemoji/blob/mast
 
 Data mapping parsed from ![Emoji Data](https://github.com/iamcal/emoji-data), licensed under the [MIT License](https://github.com/iamcal/emoji-data/blob/master/LICENSE).
 
+## Bug Reporting and Feature Suggestions
+Go to the [GitHub's issue board](https://github.com/Moerill/Token-Mold/issues) and create an issue with the template fitting to what you want to post and follow its instructions.
+
+**I will ignore half-hearted bug reports ignoring the issue template or Discord mentions!**  
+Its not difficult to put at least some effort into something that you want someone else to put their spare time into to fix!  
+
 ## Licensing
 <img alt="GitHub" src="https://img.shields.io/github/license/moerill/emojule?style=flat">
 
