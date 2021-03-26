@@ -4,6 +4,9 @@
 This module adds Emoji/Emoticon/Smiley support to chat and most text based editors in FVTT. It also provides suggestions for emojis in chat. Just start your emoji using ``:`` and suggestions will appear! (Suggestions is only available for chat.)  
 The emojis are encoded similar to most modern apps, like Discord, using ':keyword:', e.g. ':smile:'.  
 Use the settings menu to add your own custom emojis!
+## Maintenance Mode  
+This repository is no longer receiving active attention. In my opinion this module is complete and stable, and i'll be focusing my efforts on other modules/stuff. PR's are welcome and i'll try to investigate bugs and keep this module up to date with Foundry, when i find the time to do so.  
+That said, feel free to keep suggesting features, if i find something interesting i may end up implementing it.
 
 ## Atribution
 Powered by ![Twemoji - Twitter Emoji](https://github.com/twitter/twemoji).
