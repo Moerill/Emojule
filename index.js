@@ -61,8 +61,11 @@ Hooks.on('init', () => {
 Hooks.on('ready', async () => {
   await createEmojiList(game.settings.get('emojule', 'emojis'));
   const oldFun = TextEditor.enrichHTML;
-  TextEditor.enrichHTML = function (content, args) {
+  TextEditor.enrichHTML = async function (content, args) {
     let ret = oldFun.call(this, content, args);
+    if (ret instanceof Promise) {
+      ret = await ret;
+    }
     ret = ret.replace(/:\w+:/g, function(match, offset, src) {
       const data = CONFIG.emojule.list.find(e => e.code === match);
       return `<img class="emoji" draggable="false" src="${data?.url}" title="${data?.code.slice(1, -1)}"/>`;

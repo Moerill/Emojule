@@ -1,3 +1,7 @@
+# vNext
+
+- *FIX* some critical errors when running on v10
+
 # v0.3.3
 
 - *FIX* incompatibility with MEME
