@@ -12,7 +12,7 @@ export default class EmojiPleter {
   }
 
   _onKeyDown(ev) {
-    const code = game.keyboard.getKey(event);
+    const code = ev.key;
     if (code === 'Enter' && this._visible) {
       const word = this._getWord();
       if (/^:\w*$/.exec(word)) {

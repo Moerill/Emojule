@@ -59,7 +59,7 @@ export default class Emotings extends FormApplication {
   }
 
   _blockInput(ev) {
-    const code = game.keyboard.getKey(ev);
+    const code = ev.key;
     if (/^(\w?|Backspace|Shift|Control|Alt)$/.exec(code))
       return;
     
