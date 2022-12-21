@@ -63,7 +63,7 @@ Hooks.on('ready', async () => {
   const oldFun = TextEditor.enrichHTML;
   TextEditor.enrichHTML = async function (content, args) {
     let ret = oldFun.call(this, content, args);
-    if (ret.__proto__ === Promise.prototype) {
+    if (ret instanceof Promise) {
       ret = await ret;
     }
     ret = ret.replace(/:\w+:/g, function(match, offset, src) {
